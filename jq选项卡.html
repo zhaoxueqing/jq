@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;list-style: none;}
+        div{margin: 100px auto 10px;width: 500px;}
+        ul{width: calc(500px - 2px);height: calc(400px - 2px);border: 1px solid #2b542c;margin:auto;}
+        ul li{background: red;width: 498px;height: 398px;display: none;}
+        .on{background: red;}
+        ul li.active{display: block;}
+    </style>
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            $('div input').click(function(){
+                $(this).addClass('on').siblings('input').removeClass('on');
+                $('ul li').eq($(this).index()).addClass('active').siblings('li').removeClass('active');
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <input type="button" value="11">
+    <input type="button" value="22">
+    <input type="button" value="33">
+    <input type="button" value="44">
+    <input type="button" value="55">
+</div>
+<ul>
+    <li class="active">11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+</ul>
+</body>
+</html>
